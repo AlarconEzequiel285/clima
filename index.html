@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tarjeta de Clima</title>
+
+  <!-- Fuente Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome para iconos -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Videos de fondo para simular crossfade cuando cambiamos de clima -->
+  <video autoplay muted loop id="bgVideo1" class="bgVideo"></video>
+  <video autoplay muted loop id="bgVideo2" class="bgVideo" style="opacity:0;"></video>
+
+  <!-- Tarjeta  -->
+  <div class="weather-card" id="weatherCard">
+    
+    <!-- ciudad y fecha -->
+    <div class="weather-header">
+      <h2>Corrientes</h2>
+      <p id="date">Cargando fecha...</p> <!-- hora eliminada según pedido -->
+    </div>
+
+    <!-- icono, temperatura y descripción -->
+    <div class="weather-main">
+      <div class="weather-icon" id="weatherIcon">
+        <i class="fas fa-sun fa-3x"></i> <!-- icono inicial -->
+      </div>
+      <div class="temperature">
+        <span id="tempValue">24</span>
+        <span>°C</span>
+      </div>
+      <p class="weather-desc" id="weatherDesc">Soleado</p>
+    </div>
+
+    <!-- Footer con barras de información -->
+    <div class="weather-footer">
+      <div class="info">
+        <p>Humedad</p>
+        <div class="humidity-bar">
+          <div class="humidity-fill" id="humidityFill"></div>
+        </div>
+        <p id="humidityValue">60%</p>
+      </div>
+      <div class="info">
+        <p>Viento</p>
+        <div class="wind-bar">
+          <div class="wind-fill" id="windFill"></div>
+        </div>
+        <p id="windValue">15 km/h</p>
+      </div>
+      <div class="info">
+        <p>Prob. lluvia</p>
+        <div class="rain-bar">
+          <div class="rain-fill" id="rainFill"></div>
+        </div>
+        <p id="rainValue">10%</p>
+      </div>
+    </div>
+
+    <!-- Botones para cambiar el clima -->
+    <div class="weather-buttons">
+      <button onclick="changeWeather('sunny')">☀️ Sol</button>
+      <button onclick="changeWeather('cloudy')">☁️ Nublado</button>
+      <button onclick="changeWeather('rainy')">🌧 Lluvia</button>
+      <button onclick="changeWeather('night')">🌙 Noche</button>
+    </div>
+
+    <!-- Mensaje informativo -->
+    <p class="disclaimer">⚠️ Esta tarjeta es solo decorativa, no refleja el clima real.</p>
+    
+  </div>
+    <!-- contacto! -->
+    <div class="social-buttons">
+    <a href="https://portfolio-temp-ochre-five.vercel.app/" target="_blank">Portfolio</a>
+    <a href="https://www.linkedin.com/in/alarconezequiel/" target="_blank">LinkedIn</a>
+    <a href="https://github.com/AlarconEzequiel285" target="_blank">GitHub</a>
+  </div>
+
+
+  
+  <script src="script.js"></script>
+</body>
+</html>
